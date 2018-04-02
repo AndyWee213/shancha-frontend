@@ -20,6 +20,7 @@ import groupsEdit from './components/Administrative/structures/groups/edit.vue'
 import usersList from './components/Administrative/personnel/users/list.vue'
 import usersAdd from './components/Administrative/personnel/users/add.vue'
 import usersEdit from './components/Administrative/personnel/users/edit.vue'
+import auctioningItemList from './components/Report/auctioningItem/list'
 
 /**
  * meta参数解析
@@ -97,6 +98,13 @@ const routes = [
       { path: 'users/list', component: usersList, name: 'usersList', meta: { hideLeft: false, module: 'Administrative', menu: 'users' }},
       { path: 'users/add', component: usersAdd, name: 'usersAdd', meta: { hideLeft: false, module: 'Administrative', menu: 'users' }},
       { path: 'users/edit/:id', component: usersEdit, name: 'usersEdit', meta: { hideLeft: false, module: 'Administrative', menu: 'users' }}
+    ]
+  },
+  {
+    path: '/home',
+    component: Home,
+    children: [
+      { path: 'report/list', component: auctioningItemList, name: 'auctioningItemList', meta: { hideLeft: false, module: 'Report', menu: 'report' }}
     ]
   }
 ]
